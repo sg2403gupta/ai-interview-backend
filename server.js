@@ -10,12 +10,20 @@ const practiceRoutes = require("./routes/practice");
 const app = express();
 
 // Middleware
+const cors = require("cors");
+
 app.use(
   cors({
-    origin: "http://localhost:5173", // Frontend URL
+    origin: [
+      "http://localhost:5173", // local dev
+      "https://ai-interview-frontend-ivory.vercel.app/", // production frontend
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
+
 app.use(express.json());
 
 // Routes
