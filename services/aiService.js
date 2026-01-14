@@ -4,7 +4,7 @@ class AIService {
   constructor() {
     // Use direct IP for stability on Windows
     this.ollamaUrl = process.env.OLLAMA_API_URL || "http://127.0.0.1:11434";
-    this.model = "phi3:mini"; // ✅ MATCHES YOUR INSTALLED MODEL
+    this.model = "phi3:mini";
   }
 
   // Generate question based on topic
