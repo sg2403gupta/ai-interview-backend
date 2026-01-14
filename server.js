@@ -9,7 +9,7 @@ const practiceRoutes = require("./routes/practice");
 
 const app = express();
 
-// ✅ FIXED CORS CONFIG
+// ✅ FIXED CORS CONFIG (NO WILDCARD ROUTES)
 const allowedOrigins = [
   "http://localhost:5173", // local dev
   "https://ai-interview-frontend-ivory.vercel.app", // production frontend
@@ -32,9 +32,6 @@ app.use(
     credentials: true,
   })
 );
-
-// 🔥 THIS LINE IS REQUIRED FOR PREFLIGHT REQUESTS
-app.options("*", cors());
 
 app.use(express.json());
 
