@@ -10,7 +10,6 @@ const practiceRoutes = require("./routes/practice");
 const app = express();
 
 // Middleware
-const cors = require("cors");
 
 app.use(
   cors({
